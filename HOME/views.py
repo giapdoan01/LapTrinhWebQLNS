@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.messages import get_messages
+from django.utils import timezone
+
 
 def login_view(request):
     storage = get_messages(request)  # Xóa messages cũ trước khi render
@@ -36,4 +38,6 @@ from django.shortcuts import redirect
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+
 
